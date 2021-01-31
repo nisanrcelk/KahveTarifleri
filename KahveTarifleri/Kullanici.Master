@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Kullanici.master.cs" Inherits="KahveTarifleri.Kullanici" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .dropdown-item{
+         border:none;
+         color:aqua;
+                       }
+
+        #navbar a {
+            margin:3px;
+            color: #F0CA95;
+            border: solid 1px;
+            border-radius:2px;
+            
+            border-color: #F0CA95;
+        }
+
+            #navbar a:hover {
+                color: white;
+                background-color: #F0CA95;
+                font-size:15px;
+            }
+        
+                  
+             #yeter a{
+                 border:none;
+                 margin:1px;
+                
+             }
+
+        #master {
+            background-color: #F0CA95;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="master">
+
+            <nav class="navbar navbar-expand-md" style="background-color:black;">
+                <div class="container-fluid">
+                    <span style="color: #F0CA95;" class="navbar-brand" href="#">
+                        Nisa'nın Kahve Tarifleri
+                        <span class="fa fa-coffee mr-2"></span>
+                    </span>
+                    <div id="navbar" class="collapse navbar-collapse"">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" style="margin-left: 200px;" aria-current="page" href="Anasayfa.aspx">Anasayfa</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategoriler
+                                </a>
+                                
+                                <ul id="yeter" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                 
+                                     <asp:DataList ID="DataList2" runat="server">
+                                    <ItemTemplate>
+
+          
+            <li>  <a  class="dropdown-item" href="Kategori.aspx?Kategoriid=<%#Eval("Kategoriid")%> "> <asp:Label ID="Label1" runat="server" Text='<%#Eval("Kategoriad") %>'>   </asp:Label> </a></li> 
+                                       
+                                  </ItemTemplate>
+                                   </asp:DataList>
+                                </ul>
+                           
+                            </li>
+                         
+                            <li class="nav-item">
+                                <a class="nav-link" href="TarifOner.aspx">Tarif Öner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="KahveyeDair">Kahveye Dair</a>
+                            </li>
+                    </div>
+                </div>
+            </nav>
+              <div style="height:15px;"></div>
+            <div class="container">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+  
+            <footer class="row">
+                <div class="col-md-12" style="text-align: center; color: #F0CA95; background-color:black; border: solid 1px;">
+                       2020| Tüm hakları saklıdır.
+                </div>
+            </footer>
+
+
+
+        </div>
+    </form>
+</body>
+</html>

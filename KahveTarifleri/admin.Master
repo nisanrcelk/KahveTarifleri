@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="KahveTarifleri.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+      body{
+          background-color:cornflowerblue;
+      }
+    </style>
+</head>
+<body>
+    <form id="form1"  runat="server">
+        <div>
+              <div class="container-fluid">
+               <div class="row">
+                   <div class="col-md-12" style="height:150px;">
+                <h1 style="background-color:white; color:cornflowerblue; text-align:center; margin:20px;">LOGIN     <span class="fa fa-key mr-2"></span></h1>
+                   
+
+                       </div>
+
+</div>
+                  </div>
+            <div class="container">
+                  <div class="row">
+        <div class="col-md-3">
+             
+<div class="bg-light border-right mr-3" id="sidebar-wrapper">
+    
+      <div class="list-group list-group-flush ">
+          <a href="Kategoriler.aspx" class="list-group-item">Kategoriler</a>
+        
+
+         <a href="Akahveler.aspx" class="list-group-item">Kahveler</a>
+        <a href="Yorumlar.aspx" class="list-group-item ">Yorumlar</a>
+        <a href="Tarifler.aspx" class="list-group-item">Öneriler</a>
+     
+     
+      </div>
+    </div>
+            </div>
+                      <div class="col-md-9" style="background-color:white;">
+
+
+                          
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+                      </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </form>
+</body>
+</html>
